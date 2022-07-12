@@ -11,5 +11,6 @@ class GetHTML():
         html+='</ol>'
 
         self.html = html
+        
         with open("output.html", "w") as text_file:
             text_file.write(self.html)
