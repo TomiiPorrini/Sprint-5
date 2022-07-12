@@ -13,7 +13,7 @@ a cada uno. A continuación se detallan las características de cada uno de ello
 Adicionalmente los clientes pueden tener distintos tipos de tarjetas de crédito y
 operaciones permitidas según su perfil asociado.
 ## Ejemplo
-* Clientes Classic
+### Clientes Classic
 * Tiene solamente una tarjeta de débito que se crea junto con el cliente.
 * Solo tiene una caja ahorro en pesos creada cuando se dio de alta el cliente.
 Como no tiene cuenta en dólares, no puede comprar y vender dólares.
@@ -21,7 +21,7 @@ Como no tiene cuenta en dólares, no puede comprar y vender dólares.
 * No tienen acceso a tarjetas de crédito ni chequeras
 * La comisión por transferencias hechas es de 1%.
 * No puede recibir transferencias mayores a $150.000 sin previo aviso.
-* Clientes Gold
+### Clientes Gold
 * Tiene una tarjeta de débito que se crea con el cliente.
 * Tiene una cuenta corriente con un descubierto de $10.000. Hay que tener
 presente que como tiene cuenta corriente el saldo en la cuenta podría ser
@@ -33,7 +33,7 @@ quiera realizar.
 * Pueden tener una chequera.
 * La comisión por transferencias hechas es de 0,5%.
 * No puede recibir transferencias mayores a $500.000 sin previo aviso.
-* Clientes Black
+### Clientes Black
 * Los clientes Black tienen una caja de ahorro en pesos, cuenta corriente en
 pesos, y una caja de ahorro en dólares.
 * Pueden tener un descubierto en su cuenta corriente de hasta $10.000.
