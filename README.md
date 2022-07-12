@@ -134,3 +134,5 @@ clases para generarlo.
 ## Errores y excepciones a tener presentes
 * Transacciones que dejen el monto en negativo
 * División por cero.
+## Diagrama
+![diagramaClases](https://user-images.githubusercontent.com/105433665/178548104-a5fee1f5-fd62-4f90-a4b4-e87245390a8a.png)
