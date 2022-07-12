@@ -106,9 +106,9 @@ procesar.
 NOTA: Se adjuntan ejemplos para cada tipo de cliente de eventos aceptados y
 rechazados.
 
-Las transacciones que informa el sistema legado son acotadas. Actualmente
-informa las siguientes transacciones:
-RETIRO_EFECTIVO_CAJERO_AUTOMATICO: Tener presente que si tiene
+## Las transacciones que informa el sistema legado son acotadas. Actualmente informa las siguientes transacciones:
+
+* RETIRO_EFECTIVO_CAJERO_AUTOMATICO: Tener presente que si tiene
 cuenta corriente puede figurar el valor de saldo en cuenta como negativo
 hasta el importe del cupo establecido
 * ALTA_TARJETA_CREDITO: Se solicito una nueva tarjeta de crédito
