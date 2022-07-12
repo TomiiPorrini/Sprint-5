@@ -3,45 +3,45 @@
 ITBANK tiene distintos tipos de clientes y distintos tipos de cuentas que le puede dar
 a cada uno. A continuación se detallan las características de cada uno de ellos
 ## Tipos de clientes
- Classic
- Gold
- Black
+* Classic
+* Gold
+* Black
 ## Tipos de cuentas
- Caja de ahorro en pesos
- Caja de ahorro en dólares
- Cuenta Corriente
+* Caja de ahorro en pesos
+* Caja de ahorro en dólares
+* Cuenta Corriente
 Adicionalmente los clientes pueden tener distintos tipos de tarjetas de crédito y
 operaciones permitidas según su perfil asociado.
 ## Ejemplo
 * Clientes Classic
- Tiene solamente una tarjeta de débito que se crea junto con el cliente.
- Solo tiene una caja ahorro en pesos creada cuando se dio de alta el cliente.
+* Tiene solamente una tarjeta de débito que se crea junto con el cliente.
+* Solo tiene una caja ahorro en pesos creada cuando se dio de alta el cliente.
 Como no tiene cuenta en dólares, no puede comprar y vender dólares.
- Solo se le permite retirar hasta un máximo de $10.000 diarios por cajero.
- No tienen acceso a tarjetas de crédito ni chequeras
- La comisión por transferencias hechas es de 1%.
- No puede recibir transferencias mayores a $150.000 sin previo aviso.
+* Solo se le permite retirar hasta un máximo de $10.000 diarios por cajero.
+* No tienen acceso a tarjetas de crédito ni chequeras
+* La comisión por transferencias hechas es de 1%.
+* No puede recibir transferencias mayores a $150.000 sin previo aviso.
 * Clientes Gold
- Tiene una tarjeta de débito que se crea con el cliente.
- Tiene una cuenta corriente con un descubierto de $10.000. Hay que tener
+* Tiene una tarjeta de débito que se crea con el cliente.
+* Tiene una cuenta corriente con un descubierto de $10.000. Hay que tener
 presente que como tiene cuenta corriente el saldo en la cuenta podría ser
 negativo y hasta -$10.000 si tiene cupo diario para la operación que se
 quiera realizar.
- Tiene una caja de ahorro en dólares, por lo que puede comprar dólares.
- Puede tener solo una tarjeta de crédito.
- Las extracciones de efectivo tienen un máximo de $20.000 por día.
- Pueden tener una chequera.
- La comisión por transferencias hechas es de 0,5%.
- No puede recibir transferencias mayores a $500.000 sin previo aviso.
+* Tiene una caja de ahorro en dólares, por lo que puede comprar dólares.
+* Puede tener solo una tarjeta de crédito.
+* Las extracciones de efectivo tienen un máximo de $20.000 por día.
+* Pueden tener una chequera.
+* La comisión por transferencias hechas es de 0,5%.
+* No puede recibir transferencias mayores a $500.000 sin previo aviso.
 * Clientes Black
- Los clientes Black tienen una caja de ahorro en pesos, cuenta corriente en
+* Los clientes Black tienen una caja de ahorro en pesos, cuenta corriente en
 pesos, y una caja de ahorro en dólares.
- Pueden tener un descubierto en su cuenta corriente de hasta $10.000.
- Pueden tener hasta 5 tarjetas de crédito.
- Pueden extraer hasta $100.000 por día
- Pueden tener hasta dos chequeras.
- No se aplican comisiones a las transferencias.
- Pueden recibir transferencias por cualquier monto sin previa autorización
+* Pueden tener un descubierto en su cuenta corriente de hasta $10.000.
+* Pueden tener hasta 5 tarjetas de crédito.
+* Pueden extraer hasta $100.000 por día
+* Pueden tener hasta dos chequeras.
+* No se aplican comisiones a las transferencias.
+* Pueden recibir transferencias por cualquier monto sin previa autorización
 ## Problemática
 El banco cuenta con un sistema TPS (Sistema de Procesamiento de Transacciones)
 que tiene como principal función enviar las transacciones ocurridas, diferenciando
@@ -111,26 +111,26 @@ informa las siguientes transacciones:
 RETIRO_EFECTIVO_CAJERO_AUTOMATICO: Tener presente que si tiene
 cuenta corriente puede figurar el valor de saldo en cuenta como negativo
 hasta el importe del cupo establecido
- ALTA_TARJETA_CREDITO: Se solicito una nueva tarjeta de crédito
- ALTA_CHEQUERA: Se solicito una nueva chequera
- COMPRAR_DOLAR: Se solicito realizar la transacción para comprar
+* ALTA_TARJETA_CREDITO: Se solicito una nueva tarjeta de crédito
+* ALTA_CHEQUERA: Se solicito una nueva chequera
+* COMPRAR_DOLAR: Se solicito realizar la transacción para comprar
 dólares, pero solo lo pueden hacer los clientes que tengan cuenta en
 dólares.
- TRANSFERENCIA_ENVIADA: Solo se puede en pesos y lo que tenga en caja
+* TRANSFERENCIA_ENVIADA: Solo se puede en pesos y lo que tenga en caja
 de ahorro y cuenta corriente debe poder pagar la comisión que se cobra.
- TRANSFERENCIA_RECIBIDA: Sólo en pesos y tener presente que va a estar
+* TRANSFERENCIA_RECIBIDA: Sólo en pesos y tener presente que va a estar
 rechaza si no estuvo autorizada.
 ## Restricciones
 El equipo de arquitectura de TI del ITBANK estableció los siguientes principios:
- Se debe utilizar programación orientada a objetos para generar la nueva
+* Se debe utilizar programación orientada a objetos para generar la nueva
 aplicación.
- Existe un diagrama de clases estándar en la compañía que sirve como guía,
+* Existe un diagrama de clases estándar en la compañía que sirve como guía,
 por lo que se pueden cambiar para cubrir las necesidades del proyecto.
- Para los cálculos que se realizan en funciones que se implementaron, se
+* Para los cálculos que se realizan en funciones que se implementaron, se
 tiene que llamar al paquete o módulo y ejecutarlas.
- Se puede utilizar una librería para generar el HTML o implementar las
+* Se puede utilizar una librería para generar el HTML o implementar las
 clases para generarlo.
- Se debe validar que los archivos JSON estén correctamente formateados.
+* Se debe validar que los archivos JSON estén correctamente formateados.
 ## Errores y excepciones a tener presentes
- Transacciones que dejen el monto en negativo
- División por cero.
+* Transacciones que dejen el monto en negativo
+* División por cero.
