@@ -20,6 +20,8 @@ for i, x in enumerate(razones):
     print("Razon", i+1,":", x)
 print("******FIN RAZONES******")
 
-#genero mi html con los datos del cliente.
+#genero un objeto del html con las razones
 html = reporte.GetHTML(razones)
+
+#Ejecuto el html con los datos del cliente.
 html.get_html()
