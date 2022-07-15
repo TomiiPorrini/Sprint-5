@@ -1,5 +1,5 @@
 import json
-from clases import cliente
+import cliente
 
 class Parser():
     def __init__(self,file):
@@ -13,6 +13,7 @@ class Parser():
             self.cliente = cliente.ClienteClassic(self.data)
             
         self.eventos=self.data['transacciones']
+
         
     def load(self):
         f=open(self.file)

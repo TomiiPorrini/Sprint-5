@@ -1,14 +1,14 @@
+import direccion
 class Cliente:
     def __init__(self,data):
-        self.tipo=data['tipo']
-        self.dni=data['dni']
-        self.nombre=data['nombre']
-        self.apellido=data['apellido']
+        self.tipo = data['tipo']
+        self.dni = data['dni']
+        self.nombre = data['nombre']
+        self.apellido = data['apellido']
+        self.numero = data['numero']
+        self.direccion = direccion.Direccion(data['direccion'])
         print('Se creo cliente con dni: '+self.dni)
         
-    def baja(self):
-        self.tipo='baja'
-
 class ClienteClassic(Cliente):
     def __init__(self, data):
         super().__init__(data)
@@ -53,3 +53,4 @@ class ClienteBlack(Cliente):
 
     def puede_comprar_dolar(self):
         return True
+
