@@ -1,15 +1,5 @@
-#los clientes tipo GOLD y BLACK tienen esta cuenta con un determinado descubierto segun consigna
-class CuentaCorriente():
-    def __init__(self):
-        self.descubierto = -10000
-
-#con esta cuenta se puede comprar dolares segun consigna
-class CajaDeAhorroDolares():
-    def __init__(self):
-        self.puedeComprarDolares = True
-
 #creamos los atributos y seteamos sus valores dependiendo del tipo de cliente que sea
-class CajaDeAhorroPesos():
+class Cuenta():
     def __init__(self, tipoCliente):
         self.tipoCliente = tipoCliente
 
@@ -25,3 +15,14 @@ class CajaDeAhorroPesos():
             self.limite_extraccion_diario = 100000
             self.limite_transferencia_recibida = None
             self.costo_transferencias = None
+
+class CuentaCorriente(Cuenta):
+    def __init__(self, tipoCliente):
+        super().__init__(tipoCliente)
+        self.descubierto = -10000
+
+class CajaDeAhorroDolares(Cuenta):
+    pass
+
+class CajaDeAhorroPesos(Cuenta):
+    pass

@@ -1,3 +1,4 @@
+from fcntl import F_SEAL_SEAL
 import direccion
 import cuenta
 
@@ -20,6 +21,12 @@ class ClienteClassic(Cliente):
         self.cuentaCorriente = None
         self.cajaDeAhorroEnDolares = None
 
+    def puede_comprar_dolares(self):
+        if self.cajaDeAhorroEnDolares != None:
+            return True
+        else:
+            return False
+
     def puede_crear_chequera(self):
         return False
         
@@ -34,6 +41,12 @@ class ClienteGold(Cliente):
         self.cajaDeAhorroEnPesos = cuenta.CajaDeAhorroPesos(self.tipo)
         self.cuentaCorriente = cuenta.CuentaCorriente()
         self.cajaDeAhorroEnDolares = cuenta.CajaDeAhorroDolares()
+
+    def puede_comprar_dolares(self):
+        if self.cajaDeAhorroEnDolares != None:
+            return True
+        else:
+            return False
 
     def puede_crear_chequera(self):
         return True
@@ -50,6 +63,12 @@ class ClienteBlack(Cliente):
         self.cuentaCorriente = cuenta.CuentaCorriente()
         self.cajaDeAhorroEnDolares = cuenta.CajaDeAhorroDolares()
 
+    def puede_comprar_dolares(self):
+        if self.cajaDeAhorroEnDolares != None:
+            return True
+        else:
+            return False
+    
     def puede_crear_chequera(self):
         return True
 
