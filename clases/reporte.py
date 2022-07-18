@@ -1,9 +1,11 @@
 import razones
+
 class GetHTML():
-    def __init__(self,cliente, transaccionesRechazadas, transaccionesAceptadas):
+    def __init__(self,cliente, transaccionesRechazadas, transaccionesAceptadas, motivosDeRechazo):
         self.cliente = cliente
         self.transaccionesRec = transaccionesRechazadas
         self.transaccionesAcep = transaccionesAceptadas
+        self.motivosDeRechazo = motivosDeRechazo
 
     def get_html(self):
 
@@ -31,15 +33,13 @@ class GetHTML():
         html+='<td>Monto</td>'
         html+='<td>Razon</td>'
         html+='</tr>'
-        for x in self.transaccionesRec:
+        for i,x in enumerate(self.transaccionesRec):
             html+='<tr>'
             html+='<td>{}</td>'.format(x['fecha'])
             html+='<td>{}</td>'.format(x['tipo'])
             html+='<td>{}</td>'.format(x['estado'])
             html+='<td>{}</td>'.format(x['monto'])
-            # razon = razones.Razon(x['tipo'])
-            # html+='<td>{}</td>'.format()
-            # falta terminar de ver las razones.
+            html+='<td>{}</td>'.format(self.motivosDeRechazo[i])
             html+='</tr>'
         html+='</table>'
 

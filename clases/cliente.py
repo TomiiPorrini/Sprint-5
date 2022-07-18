@@ -1,4 +1,5 @@
 import direccion
+
 class Cliente:
     def __init__(self,data):
         self.tipo = data['tipo']
