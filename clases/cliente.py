@@ -1,4 +1,5 @@
 import direccion
+import cuenta
 
 class Cliente:
     def __init__(self,data):
@@ -15,9 +16,9 @@ class ClienteClassic(Cliente):
         super().__init__(data)
         print('Se creo cliente classic')
         self.tarjeta_debito = True
-
-    def puede_comprar_dolar(self):
-        return False
+        self.cajaDeAhorroEnPesos = cuenta.CajaDeAhorroPesos(self.tipo)
+        self.cuentaCorriente = None
+        self.cajaDeAhorroEnDolares = None
 
     def puede_crear_chequera(self):
         return False
@@ -30,9 +31,9 @@ class ClienteGold(Cliente):
         super().__init__(data)
         print('Se creo cliente gold')
         self.tarjeta_debito = True
-    
-    def puede_comprar_dolar(self):
-        return True
+        self.cajaDeAhorroEnPesos = cuenta.CajaDeAhorroPesos(self.tipo)
+        self.cuentaCorriente = cuenta.CuentaCorriente()
+        self.cajaDeAhorroEnDolares = cuenta.CajaDeAhorroDolares()
 
     def puede_crear_chequera(self):
         return True
@@ -45,13 +46,13 @@ class ClienteBlack(Cliente):
         super().__init__(data)
         print('Se creo cliente black')
         self.tarjeta_debito = False
+        self.cajaDeAhorroEnPesos = cuenta.CajaDeAhorroPesos(self.tipo)
+        self.cuentaCorriente = cuenta.CuentaCorriente()
+        self.cajaDeAhorroEnDolares = cuenta.CajaDeAhorroDolares()
 
     def puede_crear_chequera(self):
         return True
 
     def puede_crear_tarjeta_credito(self):
-        return True
-
-    def puede_comprar_dolar(self):
         return True
 
